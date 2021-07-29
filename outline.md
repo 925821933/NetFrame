@@ -7,12 +7,14 @@
 + g++5.5.0  
 
 2.目录结构
+```
 + build     -------Build结果
 + src       -------源代码
 + lib       -------库目录
 + test      -------测试代码目录
 + CMakeLists.txt
 + outline.md
+```
 ## 3.主要技术点
 + 使用**缓存技术**实现了简单的**异步日志系统**，日志系统是**C++的流式风格**，能够记录日志输出的时间、文件、行号、内容等；
 + 总体是基于**Reactor模式+非阻塞IO+以协程为基础的线程池**框架；
@@ -32,88 +34,22 @@
                               
 ```
 ## 5.Reactor
-![reactor](https://github.com/925821933/NetFrame/blob/master/reactor.png)
-## 线程封装
-1.线程 2.互斥锁 3.条件变量
-## 日志系统
-1. 功能:   
-+ c++流式风格
-+ 用双缓存队列实现简单的异步功能
-
-+ coredump 信号中断 
-2. 类:
-## 网络模块
-
-+ 地址类address-----（ipv4 ,ipv6, unix)
-+ 句柄类socket -----（create bind listen accept listen  close    tcp recv send  udp recvfrom sendto)
-+ tcp/udp 接收发
-
-## http
-+ 简单实现 http/1.1 get head optionst方法
-+ HttpRequest
-+ HttpResponse
+## 6.使用
+服务端
 ```
-GET / HTTP/1.1\r\n
-Host:www.baidu.com\r\n
-Content-Length:0\r\n
-Connection:keep-alive\r\n
-\r\n
-
-HEAD / HTTP/1.1\r\n
-Host:www.baidu.com\r\n
-Content-Length:0\r\n
-Connection:keep-alive/close\r\n
-\r\n
-
-OPTIONS / HTTP/1.1\r\n
-host:www.baidu.com\r\n
-Content-Length:0\r\n
-Connection:keep-alive/close\r\n
-\r\n
-
-HTTP1.1 204 No Content\r\n
-Allow:GET,HEAD,OPTIONS\r\n
-Content-Length:0\r\n
-Connection:keep-alive/close\r\n
-\r\n
-
-HTTP1.1 200 OK\r\n
-Content-type:text\r\n
-Content-Length:5\r\n
-\r\n
-hello
-
-HTTP1.1 404 Not Found\r\n
-Content-Length:0\r\n
-\r\n
-
-HTTP1.1 400 Bad Request\r\n
-Content-Length:0\r\n
-\r\n
-
-get head options
-Content-Length:
-
-
-\r\n 回车换行来表示一行的结束
-uri:http://www.baidu.com/path?id=#frag
+test/test_threadpool IP Port
 ```
-
-
-待解决：
-定时器
-优雅关闭
-
-
-
-问题1 event[i].events 错了
-
-多线程 fd分配关闭要在一个里面   出现了 bad file discriber  ：添加是线程安全的  如果一个线程中由select管理的socket被另外一个线程close掉，将会发生什么只有天晓得。在一些UNIX系统中，select会结束阻塞态并返回，它会标识这个socket处于ready状态(后面对这个socket的操作会失败，os也会给出错误提示， 在其他线程中删除 感兴趣的fd，会出现多个连接用一个socket的问题， close以后出现 bad file discriber
-
-不关的话大概400多个fd 就出现tempro
-
-epollonshotET+协程
-epollonshotLT+线程池
-
-
-流写入很久
+客户端
+```
+test/test_address_cli IP Port
+```
+## 7.test文档说明
+```
++ test_address_cli.cpp    ------客户端程序
++ test_address_serv.cpp   ------测试封装的address
++ test_fiber.cpp          ------测试协程的切换功能
++ test_fiberEpoll.cpp     ------测试协程池添加任务的功能
++ test_http.cpp           ------测试简单解析http协议的功能
++ test_log.cpp            ------测试日志功能
++ test_threadpool.cpp     ------服务端程序
+```
