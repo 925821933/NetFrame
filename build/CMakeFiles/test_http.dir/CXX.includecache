@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/huangtianbo/cpp2/cpp/NetFrame/src/http.h
+memory
+-
+string
+-
+sstream
+-
+string.h
+-
+fstream
+-
+
+/home/huangtianbo/cpp2/cpp/NetFrame/test/test_http.cpp
+iostream
+-
+pthread.h
+-
+signal.h
+-
+sys/types.h
+-
+../src/http.h
+/home/huangtianbo/cpp2/cpp/NetFrame/src/http.h
+string.h
+-
+string
+-
+

@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/huangtianbo/cpp2/cpp/NetFrame/src/address.h
+sys/socket.h
+-
+sys/types.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+string.h
+-
+memory
+-
+string
+-
+fcntl.h
+-
+
+/home/huangtianbo/cpp2/cpp/NetFrame/test/test_address_serv.cpp
+../src/address.h
+/home/huangtianbo/cpp2/cpp/NetFrame/src/address.h
+iostream
+-
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libhtb.a CMakeFiles/htb.dir/src/log.cpp.o CMakeFiles/htb.dir/src/Thread.cpp.o CMakeFiles/htb.dir/src/fiberThread.cpp.o CMakeFiles/htb.dir/src/address.cpp.o CMakeFiles/htb.dir/src/epoll.cpp.o CMakeFiles/htb.dir/src/http.cpp.o CMakeFiles/htb.dir/src/blockIOThread.cpp.o
+/usr/bin/ranlib ../lib/libhtb.a

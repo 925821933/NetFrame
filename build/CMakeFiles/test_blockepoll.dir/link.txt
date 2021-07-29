@@ -1,0 +1,1 @@
+/usr/bin/c++  -O0 -Wall -g2 -ggdb -rdynamic CMakeFiles/test_blockepoll.dir/test/test_blockepoll.cpp.o -o ../test/test_blockepoll   -L/home/huangtianbo/cpp2/cpp/NetFrame/../lib  -Wl,-rpath,/home/huangtianbo/cpp2/cpp/NetFrame/../lib ../lib/libhtb.a -lpthread /home/huangtianbo/cpp2/cpp/frame/yaml-cpp/build/libyaml-cpp.a 
